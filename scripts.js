@@ -14,7 +14,7 @@ ir grąžins visus jo "key" masyve.
 //     color: 'white',
     // }; 
 
-    console.log('labas')
+    // console.log('labas')
 
     function showObjectKeys () {
         const audi = {
@@ -23,12 +23,13 @@ ir grąžins visus jo "key" masyve.
             year: 2005,
             color: 'white',
             }; 
+        // console.log(audi)
         const keys = Object.keys(audi)
-        console.log(keys)
+        // console.log(keys)
         const myJSON = JSON.stringify(keys)
-        console.log(myJSON)
+        // console.log(myJSON)
         const object = [JSON.parse(myJSON)]
-        console.log(object)
+        // console.log(object)
         document.getElementById('output').innerText = object
     }
 
@@ -71,4 +72,35 @@ const users = [
     { id: '9', name: 'Daniel Cane', age: 51, hasCat: true },
     
     ]; 
+       
+    function filterCatOwers(data) {
+        // console.log('pasileido funkcija')
+        for (let i = 0; i < data.length; i++) {
+            // console.log(data[i].hasCat)
+            if (data[i].hasCat) {
+                console.log(data[i].name)
+            }
+        }
+    }
+    filterCatOwers(users)
+
+    // function filterChilds(data) {
+    //     console.log('pasileido antra funkcija')
+    //     for (let i = 0; i < data.length; i++) {
+    //         if (data[i].age < 18) {
+    //             console.log(data[i].name)
+    //             console.log(new Array(data[i]))
+    //             console.log(data[i].name.split())
+    //         }
+    //     }
+    // }
+    // filterChilds(users)
+
+    function filterChilds() {
+        const filterChilds = users.filter(function (user) {
+            return user.age <=18
+        })
+        console.log(filterChilds)
+    }
+    filterChilds()
     
