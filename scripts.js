@@ -16,26 +16,32 @@ ir grąžins visus jo "key" masyve.
 
     // console.log('labas')
 
-    function showObjectKeys () {
-        const audi = {
-            make: 'opel',
-            model: 'astra',
-            year: 2005,
-            color: 'white',
-            }; 
-        // console.log(audi)
-        const keys = Object.keys(audi)
-        // console.log(keys)
-        const myJSON = JSON.stringify(keys)
-        // console.log(myJSON)
-        const object = [JSON.parse(myJSON)]
-        // console.log(object)
-        document.getElementById('output').innerText = object
+    // function showObjectKeys () {
+    //     const audi = {
+    //         make: 'opel',
+    //         model: 'astra',
+    //         year: 2005,
+    //         color: 'white',
+    //         }; 
+    //     const keys = Object.keys(audi)
+    //     console.log(keys)
+    //     const myJSON = JSON.stringify(keys)
+    //     const object = [JSON.parse(myJSON)]
+    //     document.getElementById('output').innerText = object
+    // }
+    // showObjectKeys()
+
+    const audi = {
+        make: 'opel',
+        model: 'astra',
+        year: 2005,
+        color: 'white',
+        }; 
+    function showObjectKeys(data) {
+        const keys = Object.keys(data)
+        console.log(keys)
     }
-
-    showObjectKeys()
-
-
+    showObjectKeys(audi)
 
     /* ------------------------------ TASK 5 -----------------------------------
 
@@ -84,23 +90,12 @@ const users = [
     }
     filterCatOwers(users)
 
-    // function filterChilds(data) {
-    //     console.log('pasileido antra funkcija')
-    //     for (let i = 0; i < data.length; i++) {
-    //         if (data[i].age < 18) {
-    //             console.log(data[i].name)
-    //             console.log(new Array(data[i]))
-    //             console.log(data[i].name.split())
-    //         }
-    //     }
-    // }
-    // filterChilds(users)
 
-    function filterChilds() {
-        const filterChilds = users.filter(function (user) {
-            return user.age <=18
+    function filterChilds(data) {
+        const filterChilds = data.filter(function (data) {
+            return data.age <=18
         })
         console.log(filterChilds)
     }
-    filterChilds()
+    filterChilds(users)
     
